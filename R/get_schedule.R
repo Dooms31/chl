@@ -39,7 +39,7 @@ get_schedule <- function(league, season, ..., progress = TRUE) {
     
   }
   
-  driver <- RSelenium::rsDriver(verbose = FALSE)
+  driver <- RSelenium::rsDriver(c("chrome"), version = "90.0.4430.24")
   
   on.exit(driver$client$close())
   on.exit(driver$server$stop())
@@ -48,8 +48,9 @@ get_schedule <- function(league, season, ..., progress = TRUE) {
     
     if (league == "OHL") {  
       
-      if (season == "2018-19") {url = "http://ontariohockeyleague.com/schedule/63"}
+      if (season == "2019-20") {url = "http://ontariohockeyleague.com/schedule/66"}
       
+      else if (season == "2018-19") {url = "http://ontariohockeyleague.com/schedule/63"}
       else if (season == "2017-18") {url = "http://ontariohockeyleague.com/schedule/60"}
       else if (season == "2016-17") {url = "http://ontariohockeyleague.com/schedule/56"}
       else if (season == "2015-16") {url = "http://ontariohockeyleague.com/schedule/54"}
@@ -78,8 +79,9 @@ get_schedule <- function(league, season, ..., progress = TRUE) {
     
     else if (league == "QMJHL") {
       
-      if (season == "2018-19") {url = "http://theqmjhl.ca/schedule/190"}
+      if (season == "2020-21") {url = "http://theqmjhl.ca/schedule/193"}
       
+      else if (season == "2019-20") {url = "http://theqmjhl.ca/schedule/190"}
       else if (season == "2017-18") {url = "http://theqmjhl.ca/schedule/187"}
       else if (season == "2016-17") {url = "http://theqmjhl.ca/schedule/184"}
       else if (season == "2015-16") {url = "http://theqmjhl.ca/schedule/181"}
@@ -136,8 +138,10 @@ get_schedule <- function(league, season, ..., progress = TRUE) {
     
     else if (league == "WHL") {
       
-      if (season == "2018-19") {url = "http://whl.ca/schedule/266"}
+      if (season == "2020-21") {url = "http://whl.ca/schedule/273"}
       
+      else if (season == "2019-20") {url = "http://whl.ca/schedule/270"}
+      else if (season == "2018-19") {url = "http://whl.ca/schedule/266"}
       else if (season == "2017-18") {url = "http://whl.ca/schedule/262"}
       else if (season == "2016-17") {url = "http://whl.ca/schedule/257"}
       else if (season == "2015-16") {url = "http://whl.ca/schedule/251"}
