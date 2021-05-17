@@ -27,7 +27,7 @@ get_box_score <- function(..., progress = TRUE) {
     
     pb$tick(0)}
   
-  driver <- RSelenium::rsDriver(verbose = FALSE)
+  driver <- RSelenium::rsDriver(c("chrome"), version = "90.0.4430.24")
   
   on.exit(driver$client$close())
   on.exit(driver$server$stop())
