@@ -39,7 +39,7 @@ get_schedule <- function(league, season, ..., progress = TRUE) {
     
   }
   
-  driver <- RSelenium::rsDriver(chromever = "90.0.4430.212")
+  driver <- RSelenium::rsDriver(chromever = "90.0.4430.24")
   
   on.exit(driver$client$close())
   on.exit(driver$server$stop())
